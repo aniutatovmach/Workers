@@ -1,0 +1,41 @@
+﻿<Window x:Class="Workers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Workers"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" Name="dgWorkers" Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ФИО работника" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отдел" Binding="{Binding Department}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Post}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ЗП в месяц" Binding="{Binding PayCheck}"></DataGridTextColumn>
+
+                <DataGridTemplateColumn Header="Изменить">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="bnEdit" Click="bnEdit_Click" Content="Изменить"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Удалить">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="bnDelete" Click="bnDelete_Click" Content="Удалить"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="1" Content="Добавить" Name="BnAdd" Click="BnAdd_Click"></Button>
+    </Grid>
+</Window>
