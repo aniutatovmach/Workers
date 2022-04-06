@@ -37,5 +37,6 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Row="1" Content="Добавить" Name="BnAdd" Click="BnAdd_Click"></Button>
+        <Button>Кайф</Button>
     </Grid>
 </Window>
